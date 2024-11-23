@@ -2,9 +2,9 @@
 
 @section('content')
 <main class="p-4 w-full max-w-md">
-    <div id="balance" class="block p-6 bg-gradient-to-r from-purple-500 to-pink-500 shadow rounded-xl">
+    <div id="balance" class="block p-6 bg-gradient-to-r from-blue-500 to-pink-500 shadow rounded-xl">
         <h6 class="text-md tracking-tight text-white">Total Balance</h6>
-        <h4 class="mb-2 text-2xl font-bold tracking-tight text-white">Rp 2,000,000</h4>
+        <h4 class="mb-2 text-2xl font-bold tracking-tight text-white">$ {{$total_income - $total_expense}}</h4>
         <div class="flex justify-between mt-4">
             <div>
                 <span class="flex items-center justify-center font-semibold text-white">
@@ -13,7 +13,7 @@
                     </svg>
                     Income
                 </span>
-                <span class="block font-semibold text-md text-white">Rp 1,500,000</span>
+                <span class="block font-semibold text-md text-white">$ {{$total_income}}</span>
             </div>
             <div>
                 <span class="flex items-center justify-center font-semibold text-white">
@@ -22,7 +22,7 @@
                     </svg>
                     Expense
                 </span>
-                <span class="block font-semibold text-md text-white">Rp 500,000</span>
+                <span class="block font-semibold text-md text-white">$ {{$total_expense}}</span>
             </div>
         </div>
     </div>
@@ -34,17 +34,25 @@
         </div>
 
         <!-- Transaction Items -->
-        @for ($i = 0; $i < 5; $i++)
-            <a href="#" class="flex justify-between items-center block w-full p-4 mt-3 bg-white shadow rounded-xl">
-                <div>
-                    <span class="text-md font-bold">Money Transfer</span> <br>
-                    <span class="text-sm font-semibold text-gray-500">12.00 PM</span>
-                </div>
-                <div>
-                    <span class="text-md font-bold text-green-500">+ Rp 1,500,000</span>
-                </div>
-            </a>
-        @endfor
+        @foreach ($transactions as $transaction)
+        <a href="#" class="flex justify-between items-center block w-full p-4 mt-3 bg-white shadow rounded-xl">
+            <div>
+                <span class="text-md font-bold">{{$transaction->type}} - {{$transaction->category}}</span> <br>
+                <span class="text-sm font-semibold text-gray-500">{{$transaction->created_at}}</span>
+            </div>
+            <div>
+                @if ($transaction->type == "income")
+                <span class="text-md font-bold text-green-500">
+                    +$ {{$transaction->amount}}
+                </span>
+                @else
+                <span class="text-md font-bold text-red-500">
+                    -$ {{$transaction->amount}}
+                </span>
+                @endif
+            </div>
+        </a>
+        @endforeach
         <!-- Duplicate as needed for more transactions -->
     </div>
 </main>
