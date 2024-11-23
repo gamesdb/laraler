@@ -28,3 +28,9 @@ Route::get('/income/{id}/edit', IncomeController::class.'@edit')->name('income.e
 Route::get('/expense', ExpenseController::class.'@index')->name('expense.index');
 Route::get('/expense/{id}/edit', ExpenseController::class.'@edit')->name('income.edit');
 Route::get('/transaction', TransactionController::class.'@index')->name('transaction.index');
+
+Route::post('/expense', ExpenseController::class.'@store')->name('expense.store');
+Route::post('/income', IncomeController::class.'@store')->name('income.store');
+
+Route::put('/income/{id}/edit', IncomeController::class.'@update')->name('income.update');
+Route::put('/expense/{id}/edit', ExpenseController::class.'@store')->name('income.store');

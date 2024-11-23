@@ -21,10 +21,17 @@
             <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
             <select id="category" name="category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
                 <option value="">Select Category</option>
-                <option value="food">Food</option>
-                <option value="transport">Transport</option>
-                <option value="utilities">Utilities</option>
-                <option value="other">Other</option>
+                <option value="Salary">Salary</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Movie" >Movie</option>
+                <option value="Cosplay" >Cosplay</option>
+                <option value="Idol">Idol</option>
+                <option value="Food" >Food</option>
+                <option value="Shopping" >Shopping</option>
+                <option value="Transport" >Transport</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Subscription" >Subscription</option>
+                <option value="Groceries">Groceries</option>
             </select>
         </div>
         

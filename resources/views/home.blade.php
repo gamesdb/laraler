@@ -35,7 +35,7 @@
 
         <!-- Transaction Items -->
         @foreach ($transactions as $transaction)
-        <a href="#" class="flex justify-between items-center block w-full p-4 mt-3 bg-white shadow rounded-xl">
+        <a href="{{url('/'.$transaction->type.'/'.$transaction->id.'/edit')}}" class="flex justify-between items-center block w-full p-4 mt-3 bg-white shadow rounded-xl">
             <div>
                 <span class="text-md font-bold">{{$transaction->type}} - {{$transaction->category}}</span> <br>
                 <span class="text-sm font-semibold text-gray-500">{{$transaction->created_at}}</span>
