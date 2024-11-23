@@ -53,7 +53,6 @@
             </div>
         </a>
         @endforeach
-        <!-- Duplicate as needed for more transactions -->
     </div>
 </main>
 @stop
