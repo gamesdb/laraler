@@ -23,12 +23,12 @@
                 </svg>
             </a>
         </div>
-        
+
         <div class="mb-4">
             <label for="amount" class="block text-gray-700 text-sm font-bold mb-2">Amount</label>
             <input type="number" id="amount" name="amount" placeholder="Enter income amount" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
         </div>
-        
+
         <div class="mb-4">
             <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Date</label>
             <input type="date" id="date" name="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
@@ -38,17 +38,25 @@
             <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
             <select id="category" name="category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
                 <option value="">Select Category</option>
-                <option value="salary">Salary</option>
-                <option value="bonus">Bonus</option>
-                <option value="other">Other</option>
+                <option value="Salary" {{ $transactions->category == 'Salary' ? 'selected' : '' }}>Salary</option>
+                <option value="Gaming" {{ $transactions->category == 'Gaming' ? 'selected' : '' }}>Gaming</option>
+                <option value="Movie" {{ $transactions->category == 'Movie' ? 'selected' : '' }}>Movie</option>
+                <option value="Cosplay" {{ $transactions->category == 'Cosplay' ? 'selected' : '' }}>Cosplay</option>
+                <option value="Idol" {{ $transactions->category == 'Idol' ? 'selected' : '' }}>Idol</option>
+                <option value="Food" {{ $transactions->category == 'Food' ? 'selected' : '' }}>Food</option>
+                <option value="Shopping" {{ $transactions->category == 'Shopping' ? 'selected' : '' }}>Shopping</option>
+                <option value="Transport" {{ $transactions->category == 'Transport' ? 'selected' : '' }}>Transport</option>
+                <option value="Utilities" {{ $transactions->category == 'Utilities' ? 'selected' : '' }}>Utilities</option>
+                <option value="Subscription" {{ $transactions->category == 'Subscription' ? 'selected' : '' }}>Subscription</option>
+                <option value="Groceries" {{ $transactions->category == 'Groceries' ? 'selected' : '' }}>Groceries</option>
             </select>
         </div>
-        
+
         <div class="mb-4">
             <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
             <textarea id="description" name="description" rows="3" placeholder="Enter income description" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
         </div>
-        
+
         <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Save Income</button>
     </form>
 </main>
