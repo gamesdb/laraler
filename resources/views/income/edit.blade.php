@@ -7,7 +7,7 @@
         @method('PUT')
         <div class="flex justify-between">
             <h2 class="text-2xl font-semibold text-gray-700 mb-4">Edit Income</h2>
-            <a href="#" type="button" class="
+            <a href="{{url('/transaction/'.$transactions->id.'/delete')}}" type="button" class="
                 focus:outline-none
                 text-white
                 bg-red-600

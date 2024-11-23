@@ -22,15 +22,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*Home*/
 Route::get('/home', HomeController::class.'@index')->name('home');
+
+/*Income*/
 Route::get('/income', IncomeController::class.'@index')->name('income.index');
 Route::get('/income/{id}/edit', IncomeController::class.'@edit')->name('income.edit');
+Route::post('/income', IncomeController::class.'@store')->name('income.store');
+Route::put('/income/{id}/edit', IncomeController::class.'@update')->name('income.update');
+
+/*Expense*/
 Route::get('/expense', ExpenseController::class.'@index')->name('expense.index');
 Route::get('/expense/{id}/edit', ExpenseController::class.'@edit')->name('income.edit');
-Route::get('/transaction', TransactionController::class.'@index')->name('transaction.index');
-
 Route::post('/expense', ExpenseController::class.'@store')->name('expense.store');
-Route::post('/income', IncomeController::class.'@store')->name('income.store');
-
-Route::put('/income/{id}/edit', IncomeController::class.'@update')->name('income.update');
 Route::put('/expense/{id}/edit', ExpenseController::class.'@store')->name('income.store');
+
+/*Transaction*/
+Route::get('/transaction', TransactionController::class.'@index')->name('transaction.index');
+Route::get('/transaction/{id}/delete', TransactionController::class.'@delete')->name('transaction.delete');

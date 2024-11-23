@@ -14,4 +14,10 @@ class TransactionController extends Controller
         $data['total_expense'] = Transaction::where('type','expense')->sum('amount');
         return view('transaction.index',$data);
     }
+
+
+    public function delete($id){
+        $transaction = Transaction::find($id)->delete();
+        return redirect()->route('home');
+    }
 }
